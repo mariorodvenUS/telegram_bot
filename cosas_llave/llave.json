@@ -1,0 +1,13 @@
+{
+    "llavero": "",
+    "fecha": {
+        "anio": 0,
+        "mes": 0,
+        "dia": 0
+    },
+    "tiempo": {
+        "hora": 0,
+        "minuto": 0,
+        "segundo": 0
+    }
+}
