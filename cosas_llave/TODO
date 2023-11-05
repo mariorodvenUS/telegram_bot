@@ -1,4 +1,6 @@
 necesito lista actualiza para ver quien tiene permiso de llave
-idea: que el bot recoja la hora y fecha del mensaje para activar el comando y lo vuelque en el programa (esto haria el cheqeuo de fecha y hora ineccesario??)
-idea: que el bot recoja el nombre de quien ha escrito el mensaje y chequee si esta en la lista (si esto se queda en telegram no hace falta el checkeo)
-prueba subir desde terminal
+idea: que el bot recoja el nombre de quien ha escrito el mensaje
+TODO: hacer que el bot sepa quien es el que ha escrito el mensaje
+hacer que el bot identifique el comando /llave
+osea un comando paara decir "he cogido la llave a la hora de escritura del mensaje"
+y otro para decir que se ha dejado en conserjeria
