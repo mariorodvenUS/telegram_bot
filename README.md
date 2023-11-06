@@ -24,4 +24,4 @@ Y ya estaríamos listos para ponernos a programar. Debo aclarar que el venv hay 
 ```bash
 source .venv/bin/activate   #Para activar el entorno virtual
 deactivate                  #Para desacivarlo
-```
+```hola
