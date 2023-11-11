@@ -26,7 +26,7 @@ def coger_llave(message):
     hora_mensaje = llave.coger(username)
     bot.reply_to(message, f"@{username} ha cogido la llave a las {hora_mensaje}")
    
-@bot.message_handler(commands=['llave?'])
+@bot.message_handler(commands=['where_llave'])
 def consultar_llave(message):
     llavero = llave.consultar()
     bot.reply_to(message, f"La llave la tiene @{llavero}")
