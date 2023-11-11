@@ -35,7 +35,7 @@ def consultar_llave(message):
 def dejar_llave(message):
     username = message.from_user.username if message.from_user.username else "Usuario_desconocido"
     hora_mensaje = llave.dejar()
-    bot.reply_to(message, f"@{username} ha dejado la llave en copisteria a las {hora_mensaje}")
+    bot.reply_to(message, f"@{username} ha dejado la llave en conserjeria a las {hora_mensaje}")
 
 
 
