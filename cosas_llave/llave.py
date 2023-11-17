@@ -38,10 +38,13 @@ def coger(llavero):
     return fecha_mensaje
 
 def consultar():
-    with open("llave.json", "r") as archivo:
-        datos_llave = json.load(archivo)
-    return datos_llave["llavero"]
-
+    try:
+        with open("llave.json", "r") as archivo:
+            datos_llave = json.load(archivo)
+        return datos_llave["llavero"]
+    except FileNotFoundError:
+        print("Ha pasado algo, y es que el archivo no existe, escribe el comando //llave o //llavent para crearlo")
+        return -1
 
 def dejar():
     #conseguimos la fecha cuando se escribio el mensaje y le cambiamos el formato para adaptarlo al .json y librarnos de los microsegundos
