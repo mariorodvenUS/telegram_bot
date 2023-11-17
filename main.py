@@ -20,8 +20,8 @@ def get_city(message):
     chat_id = message.chat.id
     city = message.text
     bot.send_message(chat_id, f"The temperature of {city.capitalize()} today is {get_weather(city)[0]}ºC and the weather is {get_weather(city)[1]} ")
-    #time.delay(0.5)
-    #bot.send_message(chat_id, f"On the other hand, if you're interested in tomorrow's weather forecast, you should know that the temperature of {city.capitalize()} for tomorrow will be {get_weather(city)[2]}ºC and the weather will be {get_weather(city)[3]} ")
+    time.delay(0.5)
+    bot.send_message(chat_id, f"On the other hand, if you're interested in tomorrow's weather forecast, you should know that the temperature of {city.capitalize()} for tomorrow will be {get_weather(city)[2]}ºC and the weather will be {get_weather(city)[3]} ")
     
     
     
@@ -37,28 +37,16 @@ def get_weather(city):
     weatherToday = dataToday['list'][0]['weather'][0]['main']
     
     #THE WEATHER FOR TOMORROW
-    """urlTomorrow = "https://pro.openweathermap.org/data/2.5/forecast/hourly?q={}&appid=964de7ef9e3148a1ce7d08875382dcae&units=metric".format(city)
+    urlTomorrow = "https://pro.openweathermap.org/data/2.5/forecast/hourly?q={}&appid=d27373f909d72803de30254cb29428a3&units=metric".format(city)
     responseTomorrow = requests.get(urlTomorrow)
     dataTomorrow = responseTomorrow.json()
     print(dataTomorrow)
     tempTomorrow = dataTomorrow['list'][0]['main']['temp']
-    weatherTomorrow = dataTomorrow['list'][0]['weather'][0]['main']"""
-    
-    
-    
-    
+    weatherTomorrow = dataTomorrow['list'][0]['weather'][0]['main']
+
     return tempToday,weatherToday
         
 
-def send_weather(message):
-    chat_id = message.chat.id
-    city = get_city(message)
-    temp, wind_speed, latitude, longitude, description = get_weather(city)
-    bot.reply_to(message, f"Temperatura = {temp}")
-    bot.reply_to(message, f"Velocidad del viento = {wind_speed}")
-    bot.reply_to(message, f"Latitud = {latitude}")
-    bot.reply_to(message, f"Longitud = {longitude}")
-    bot.reply_to(message, f"Descripción = {description}")
 
 #bot.send_message(chat_id, get_weather(message))
 """Bloque de texto comentado, es una funcion que toma cualquier mensaje y menciona a quien lo haya enviado
