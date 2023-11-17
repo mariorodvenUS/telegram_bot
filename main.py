@@ -37,7 +37,13 @@ def consultar_llave(message):
 def dejar_llave(message):
     username = message.from_user.username if message.from_user.username else "Usuario_desconocido"
     hora_mensaje = llave.dejar()
-    bot.reply_to(message, f"@{username} ha dejado la llave en copisteria a las {hora_mensaje}")
+    match hora_mensaje:
+        case -1:
+            bot.reply_to(message, f"@{username} ha pasado algo, y es que el archivo no existe, escribe el comando //llave o //llavent para crearlo")
+        case -2:
+            bot.reply_to(message, f"@{username} ha intentado dejar la llave donde ya está, en conserjeria")
+        case _:    
+            bot.reply_to(message, f"@{username} ha dejado la llave en conserjeria a las {hora_mensaje}")
 
 # Iniciar el bot
 bot.polling()
